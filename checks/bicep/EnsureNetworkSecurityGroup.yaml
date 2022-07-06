@@ -1,0 +1,19 @@
+metadata:
+  id: "CKV_AZURE_1000"
+  name: "Ensure that all Subnets are assigned to a Network Security Group (NSG)"
+  category: "networking"
+definition:
+  and:
+    - cond_type: filter
+      attribute: resource_type
+      operator: within
+      value:
+        - Microsoft.Network/virtualNetworks
+        - Microsoft.Network/virtualNetworks/subnets
+    - cond_type: connection
+      resource_types:
+        - Microsoft.Network/virtualNetworks
+        - Microsoft.Network/virtualNetworks/subnets
+      connected_resource_types:
+        - Microsoft.Network/networkSecurityGroups
+      operator: exists
