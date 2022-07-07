@@ -1,6 +1,7 @@
+# create checkov policy
 metadata:
-  id: "CKV_AZURE_1000"
-  name: "Ensure that all Subnets are assigned to a Network Security Group (NSG)"
+  id: "CUS_AZURE_1"
+  name: "Ensure that all Subnets are assigned to a Network Security Groups (NSG)"
   category: "networking"
 definition:
   and:

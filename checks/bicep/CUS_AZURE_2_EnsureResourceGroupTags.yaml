@@ -1,0 +1,12 @@
+# create checkov policy
+metadata:
+  id: "CUS_AZURE_2"
+  name: "Ensure that all Resource Groups have tags"
+  category: "convention"
+definition:
+  and:
+    - cond_type: attribute
+      resource_types:
+        - Microsoft.Resources/resourceGroups
+      attribute: tags
+      operator: exists
